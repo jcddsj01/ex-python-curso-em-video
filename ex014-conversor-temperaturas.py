@@ -14,9 +14,6 @@ print('+', '-' * 8, '+')
 print('| {} EX-014 {} |'.format(cores_fundo['pretoebranco'], cores_fundo['limpa']))
 print('+', '-' * 8, '+')
 
-#formula
-#(C x 9/5) + 32
-
 celcius = float(input('Informe a temperatura em °C: '))
 #ordem de precedencia
 fahrenheit = 9 * celcius / 5 + 32
