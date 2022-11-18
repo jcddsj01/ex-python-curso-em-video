@@ -1,3 +1,3 @@
 # Exercícios de Python 3
-## Canal do YouTube | Curso em Vídeo - Professor Gustavo Guanabara.
+## Feito com base no Canal do YouTube | Curso em Vídeo
 
