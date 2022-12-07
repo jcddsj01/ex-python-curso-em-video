@@ -28,7 +28,7 @@ print('-' * 12)
 #Tabuada usando o 'for in' com o range como estrutura de repetição (loop)
 #numero = int(input('Digite um número para ver sua tabuada: '))
 #print('-' * 12)
-#for index in range(1, 10+1):
+#for index in range(1, 10 + 1):
 #  print('{} x {:2} = {}'.format(numero, index, index * numero))
 #print('-' * 12)
 

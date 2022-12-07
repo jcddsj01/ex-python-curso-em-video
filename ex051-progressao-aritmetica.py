@@ -14,23 +14,9 @@ print('=' * len(titulo2))
 print(titulo2)
 print('=' * len(titulo2))
 
-pa = int(input('Primeiro termo: '))
+primeiro = int(input('Primeiro termo: '))
 razao = int(input('Razão: '))
-decimo = pa + (10 - 1) * razao
-for count in range(pa, decimo + razao, razao):
+decimo = primeiro + (10 - 1) * razao
+for count in range(primeiro, decimo + razao, razao):
     print('{}'.format(count), end=' -> ')
 print('Acabou')
-
-# --------------------------
-
-'''pa = int(input('Primeiro termo: '))
-razao = int(input('Razão: '))
-count = 1
-while count <= 10:
-    if count < 10:
-        print('{}'.format(pa), end=' -> ')
-    elif count == 10:
-        print('{}'.format(pa), end=' -> ')
-    pa += razao
-    count += 1
-print('Acabou')'''

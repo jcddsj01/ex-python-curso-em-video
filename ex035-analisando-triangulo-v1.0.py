@@ -10,7 +10,7 @@ print('|{}{}{}|'.format(cores_fundo['pretoebranco'], titulo, cores_fundo['limpa'
 print('+' + '-' * len(titulo) + '+')
 print()
 
-titulo = ' Analisador de Triângulos '
+titulo = ' Analisador de Triângulos V1.0'
 
 print('+', '=' * len(titulo), '+')
 print('| {}{}{} |'.format(cores_fundo['verde'], titulo, cores_fundo['limpa']))
