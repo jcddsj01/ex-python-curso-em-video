@@ -10,7 +10,6 @@ print('+' + '-' * len(titulo) + '+')
 print()
 
 numeros = list()
-
 for count in range(0, 5):
     numero = int(input('Digite um valor: '))
     if count == 0 or numero > numeros[-1]:
