@@ -1,24 +1,20 @@
 from time import sleep
 
-class Cores:
-    SEM_COR = '\033[m'
-    PRETO_BRANCO = '\033[1;40m'
+cores_fundo = {
+    'limpa': '\033[m',
+    'preto_branco': '\033[1;40m'
+}
 
-
-def cabecalho(texto, cor):
-    linha = '-' * len(texto)
-    print(f'\n{cor}+{linha}+{Cores.SEM_COR}')
-    print(f'{cor}|{texto}|{Cores.SEM_COR}')
-    print(f'{cor}+{linha}+{Cores.SEM_COR}\n')
-
-
-cabecalho(' SISTEMA INTERATIVO DE AJUDA ', Cores.PRETO_BRANCO)
+cabecalho = ' SISTEMA INTERATIVO DE AJUDA EM PYTHON '
+print('+', '-' * len(cabecalho), '+')
+print(f"| {cores_fundo['preto_branco']}{cabecalho}{cores_fundo['limpa']} |")
+print('+', '-' * len(cabecalho), '+', '\n')
 
 def painel():
     painel = '| SISTEMA DE AJUDA PyHELP |'
-    print(f"{Cores.PRETO_BRANCO}{'~' * len(painel)}{Cores.SEM_COR}")
-    print(f"{Cores.PRETO_BRANCO}{painel}{Cores.SEM_COR}")
-    print(f"{Cores.PRETO_BRANCO}{'~' * len(painel)}{Cores.SEM_COR}")
+    print('~' * len(painel))
+    print(f"{cores_fundo['preto_branco']}{painel}{cores_fundo['limpa']}")
+    print('~' * len(painel))
 
 def ajuda(comando):
     ajuda = f'  Acessando o manual do comando \'{comando}\''

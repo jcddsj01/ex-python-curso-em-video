@@ -1,18 +1,14 @@
 from statistics import mean
 
-class Cores:
-    SEM_COR = '\033[m'
-    PRETO_BRANCO = '\033[1;40m'
+cores_fundo = {
+    'limpa': '\033[m',
+    'preto_branco': '\033[1;40m'
+}
 
-
-def cabecalho(texto, cor):
-    linha = '-' * len(texto)
-    print(f'\n{cor}+{linha}+{Cores.SEM_COR}')
-    print(f'{cor}|{texto}|{Cores.SEM_COR}')
-    print(f'{cor}+{linha}+{Cores.SEM_COR}\n')
-
-
-cabecalho(' ANALISANDO E GERANDO DICIONÁRIOS ', Cores.PRETO_BRANCO)
+cabecalho = ' ANALISANDO E GERANDO DICIONÁRIOS '
+print('+', '-' * len(cabecalho), '+')
+print(f"| {cores_fundo['preto_branco']}{cabecalho}{cores_fundo['limpa']} |")
+print('+', '-' * len(cabecalho), '+', '\n')
 
 def notas(*n, sit=False):
     """
@@ -26,7 +22,6 @@ def notas(*n, sit=False):
     aluno['maior'] = max(n)
     aluno['menor'] = min(n)
     aluno['media'] = mean(n)
-
     if sit:
         if aluno['media'] >= 7:
             aluno['situacao'] = 'BOA'
@@ -35,7 +30,6 @@ def notas(*n, sit=False):
         else:
             aluno['situacao'] = 'RUIM'
     return aluno
-
 print('-' * 40)
 resp = notas(8, 7.5, 9, 10, sit=True)
 print(resp)

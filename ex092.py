@@ -1,21 +1,17 @@
 from datetime import date
 
-class Cores:
-    SEM_COR = '\033[m'
-    PRETO_BRANCO = '\033[1;40m'
+cores_fundo = {
+    'limpa': '\033[m',
+    'preto_branco': '\033[1;40m'
+}
 
+cabecalho = ' CADASTRO DE TRABALHADOR EM PYTHON '
+print('+', '-' * len(cabecalho), '+')
+print(f"| {cores_fundo['preto_branco']}{cabecalho}{cores_fundo['limpa']} |")
+print('+', '-' * len(cabecalho), '+', '\n')
 
-def cabecalho(texto, cor):
-    linha = '-' * len(texto)
-    print(f'\n{cor}+{linha}+{Cores.SEM_COR}')
-    print(f'{cor}|{texto}|{Cores.SEM_COR}')
-    print(f'{cor}+{linha}+{Cores.SEM_COR}\n')
-
-
-cabecalho(' CADASTRO DE TRABALHADOR ', Cores.PRETO_BRANCO)
-
-cadastro = {}
-cadastro['nome'] = input('Nome: ')
+cadastro = dict()
+cadastro['nome'] = input('Nome: ').capitalize()
 ano_nasc = int(input('Ano de Nascimento: '))
 ano_atual = date.today().year
 cadastro['idade'] = ano_atual - ano_nasc

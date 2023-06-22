@@ -1,4 +1,4 @@
-from ex115b.lib.interface import cabecalho
+from ex115b.lib.interface import cabecalho_secundario
 def arquivoExiste(arquivo):
     try:
         a = open(arquivo, 'rt')
@@ -23,7 +23,7 @@ def lerArquivo(nome):
     except:
         print('Erro ao ler o arquivo!')
     else:
-        cabecalho('PESSOAS CADASTRADAS')
+        cabecalho_secundario('PESSOAS CADASTRADAS')
         for linha in a:
             dado = linha.split(';')
             dado[1] = dado[1].replace('\n', '')

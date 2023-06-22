@@ -1,16 +1,12 @@
-class Cores:
-    SEM_COR = '\033[m'
-    PRETO_BRANCO = '\033[1;40m'
+cores_fundo = {
+    'limpa': '\033[m',
+    'preto_branco': '\033[1;40m'
+}
 
-
-def cabecalho(texto, cor):
-    linha = '-' * len(texto)
-    print(f'\n{cor}+{linha}+{Cores.SEM_COR}')
-    print(f'{cor}|{texto}|{Cores.SEM_COR}')
-    print(f'{cor}+{linha}+{Cores.SEM_COR}')
-
-
-cabecalho(' FUNÇÕES APROFUNDADAS ', Cores.PRETO_BRANCO)
+cabecalho = ' FUNÇÕES APROFUNDADAS EM PYTHON '
+print('+', '-' * len(cabecalho), '+')
+print(f"| {cores_fundo['preto_branco']}{cabecalho}{cores_fundo['limpa']} |")
+print('+', '-' * len(cabecalho), '+', '\n')
 
 def leiaInt(msg):
     while True:
@@ -38,6 +34,6 @@ def leiaFloat(msg):
         else:
             return num
 
-num_int = leiaInt('\nDigite um Inteiro: ')
+num_int = leiaInt('Digite um Inteiro: ')
 num_float = leiaFloat('Digite um Real: ')
-print(f'\nO valor inteiro digitado foi {num_int} e o real foi {num_float:.2f}')
+print(f'O valor inteiro digitado foi {num_int} e o real foi {num_float:.2f}')

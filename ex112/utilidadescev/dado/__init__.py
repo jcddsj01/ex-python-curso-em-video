@@ -6,8 +6,6 @@ def leiaDinheiro(msg):
         else:
             return float(preco_str)
 
-# ---------------------------------------------------------------------------
-
 # def leiaDinheiro(msg):
 #     while True:
 #         preco_str = input(msg).replace(',', '.').strip()

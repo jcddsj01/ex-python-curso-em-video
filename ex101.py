@@ -1,16 +1,12 @@
-class Cores:
-    SEM_COR = '\033[m'
-    PRETO_BRANCO = '\033[1;40m'
+cores_fundo = {
+    'limpa': '\033[m',
+    'preto_branco': '\033[1;40m'
+}
 
-
-def cabecalho(texto, cor):
-    linha = '-' * len(texto)
-    print(f'\n{cor}+{linha}+{Cores.SEM_COR}')
-    print(f'{cor}|{texto}|{Cores.SEM_COR}')
-    print(f'{cor}+{linha}+{Cores.SEM_COR}\n')
-
-
-cabecalho(' FUNÇÃO PARA VOTAÇÃO ', Cores.PRETO_BRANCO)
+cabecalho = ' FUNÇÕES PARA VOTAÇÃO '
+print('+', '-' * len(cabecalho), '+')
+print(f"| {cores_fundo['preto_branco']}{cabecalho}{cores_fundo['limpa']} |")
+print('+', '-' * len(cabecalho), '+', '\n')
 
 def voto(ano):
     from datetime import date
@@ -26,8 +22,6 @@ def voto(ano):
 print('-' * 30)
 ano_nascimento = int(input('Em que ano você nasceu? '))
 print(voto(ano_nascimento))
-
-# -------------------------------------
 
 '''def voto(ano):
     from datetime import date

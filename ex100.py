@@ -1,19 +1,15 @@
 from random import randint
 from time import sleep
 
-class Cores:
-    SEM_COR = '\033[m'
-    PRETO_BRANCO = '\033[1;40m'
+cores_fundo = {
+    'limpa': '\033[m',
+    'preto_branco': '\033[1;40m'
+}
 
-
-def cabecalho(texto, cor):
-    linha = '-' * len(texto)
-    print(f'\n{cor}+{linha}+{Cores.SEM_COR}')
-    print(f'{cor}|{texto}|{Cores.SEM_COR}')
-    print(f'{cor}+{linha}+{Cores.SEM_COR}\n')
-
-
-cabecalho(' FUNÇÃO PARA SORTEAR E SOMAR ', Cores.PRETO_BRANCO)
+cabecalho = ' FUNÇÕES PARA SORTEAR E SOMAR '
+print('+', '-' * len(cabecalho), '+')
+print(f"| {cores_fundo['preto_branco']}{cabecalho}{cores_fundo['limpa']} |")
+print('+', '-' * len(cabecalho), '+', '\n')
 
 def sorteia(lista):
     print('Sorteando 5 valores da lista: ', end='')

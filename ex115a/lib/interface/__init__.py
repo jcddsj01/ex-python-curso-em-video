@@ -14,13 +14,13 @@ def leiaInt(msg):
 def linha(tam=42):
     return print('-'*tam)
 
-def cabecalho(txt):
+def cabecalho_secundario(txt):
     linha()
     print(txt.center(42))
     linha()
 
 def menu(list):
-    cabecalho('MENU PRINCIPAL')
+    cabecalho_secundario('MENU PRINCIPAL')
     count = 1
     for item in list:
         print(f'\033[33m{count}\033[m - \033[34m{item}\033[m')

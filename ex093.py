@@ -1,24 +1,19 @@
-class Cores:
-    SEM_COR = '\033[m'
-    PRETO_BRANCO = '\033[1;40m'
+cores_fundo = {
+    'limpa': '\033[m',
+    'preto_branco': '\033[1;40m'
+}
 
-
-def cabecalho(texto, cor):
-    linha = '-' * len(texto)
-    print(f'\n{cor}+{linha}+{Cores.SEM_COR}')
-    print(f'{cor}|{texto}|{Cores.SEM_COR}')
-    print(f'{cor}+{linha}+{Cores.SEM_COR}\n')
-
-
-cabecalho(' CADASTRO DE JOGADOR DE FUTEBOL ', Cores.PRETO_BRANCO)
+cabecalho = ' CADASTRO DE JOGADOR DE FUTEBOL '
+print('+', '-' * len(cabecalho), '+')
+print(f"| {cores_fundo['preto_branco']}{cabecalho}{cores_fundo['limpa']} |")
+print('+', '-' * len(cabecalho), '+', '\n')
 
 jogador = dict()
 partidas = list()
-
 jogador['nome'] = input('Nome do Jogador: ').capitalize()
 total = int(input(f'Quantas partidas {jogador["nome"]} jogou? '))
-for count in range(0, total):
-    partidas.append(int(input(f'  Quantos gols na partida {count+1}? ')))
+for cont in range(0, total):
+    partidas.append(int(input(f'  Quantos gols na partida {cont+1}? ')))
 jogador['gols'] = partidas[:]
 jogador['total'] = sum(partidas)
 print('-=' * 30)

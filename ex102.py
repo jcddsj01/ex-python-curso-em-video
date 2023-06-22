@@ -1,16 +1,12 @@
-class Cores:
-    SEM_COR = '\033[m'
-    PRETO_BRANCO = '\033[1;40m'
+cores_fundo = {
+    'limpa': '\033[m',
+    'preto_branco': '\033[1;40m'
+}
 
-
-def cabecalho(texto, cor):
-    linha = '-' * len(texto)
-    print(f'\n{cor}+{linha}+{Cores.SEM_COR}')
-    print(f'{cor}|{texto}|{Cores.SEM_COR}')
-    print(f'{cor}+{linha}+{Cores.SEM_COR}\n')
-
-
-cabecalho(' FUNÇÃO PARA FATORIAL ', Cores.PRETO_BRANCO)
+cabecalho = ' FUNÇÃO PARA FATORIAL '
+print('+', '-' * len(cabecalho), '+')
+print(f"| {cores_fundo['preto_branco']}{cabecalho}{cores_fundo['limpa']} |")
+print('+', '-' * len(cabecalho), '+', '\n')
 
 def fatorial(numero, show=False):
     """
@@ -21,16 +17,15 @@ def fatorial(numero, show=False):
     """
     if numero < 0:
         return None
-
     fat = 1
-    for count in range(numero, 0, -1):
+    for cont in range(numero, 0, -1):
         if show:
-            print(count, end=' ')
-            if count > 1:
+            print(cont, end=' ')
+            if cont > 1:
                 print('x ', end='')
             else:
                 print('=', end=' ')
-        fat *= count
+        fat *= cont
     return fat
 
 print('-' * 25)
